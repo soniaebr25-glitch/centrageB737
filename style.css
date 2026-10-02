@@ -1,0 +1,273 @@
+/* ============================================================
+   B737-228 WEIGHT & BALANCE — VISUAL SYSTEM
+   Palette: deep aviation blues on white (no third-party logos/marks)
+   Type: Space Grotesk (headers) / Inter (body) / IBM Plex Mono (data)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap');
+
+:root {
+    --navy-900: #001A4D;
+    --blue-700: #0033A0;
+    --blue-500: #0068B5;
+    --blue-100: #E7EEF9;
+    --white: #FFFFFF;
+    --panel: #F5F7FA;
+    --ink: #10151C;
+    --steel: #5B6B79;
+    --divider: #D8E0E8;
+    --success: #1B7F4C;
+    --success-bg: #E7F5EC;
+    --danger: #C0272D;
+    --danger-bg: #FBEAEA;
+    --radius: 6px;
+}
+
+/* ---------- base ---------- */
+
+html, body, [class*="css"] {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background-color: var(--white);
+}
+
+.main .block-container {
+    padding-top: 1rem;
+    max-width: 1200px;
+}
+
+h1, h2, h3 {
+    font-family: 'Space Grotesk', sans-serif !important;
+    color: var(--navy-900) !important;
+}
+
+/* ---------- top banner ---------- */
+
+.wb-topbar {
+    background: linear-gradient(90deg, var(--navy-900) 0%, var(--blue-700) 100%);
+    border-bottom: 3px solid var(--blue-500);
+    padding: 1.5rem 2rem;
+    margin: -1rem -1rem 1.75rem -1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.wb-topbar-left {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+}
+
+.wb-plane-icon {
+    font-size: 2rem;
+    line-height: 1;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.25));
+}
+
+.wb-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--white);
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+}
+
+.wb-subtitle {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--blue-100);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 0.15rem;
+}
+
+.wb-topbar-right {
+    text-align: right;
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--blue-100);
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+/* ---------- section cards ---------- */
+
+.wb-card {
+    background: var(--panel);
+    border: 1px solid var(--divider);
+    border-left: 4px solid var(--blue-700);
+    border-radius: var(--radius);
+    padding: 1.25rem 1.5rem 1.4rem 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.wb-section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--navy-900);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    border-bottom: 1px solid var(--divider);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.9rem;
+}
+
+/* ---------- sidebar ---------- */
+
+section[data-testid="stSidebar"] {
+    background: var(--navy-900);
+}
+
+section[data-testid="stSidebar"] .stMarkdown,
+section[data-testid="stSidebar"] label,
+section[data-testid="stSidebar"] p {
+    color: var(--blue-100) !important;
+}
+
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: var(--white) !important;
+}
+
+section[data-testid="stSidebar"] .wb-sidebar-brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--white);
+    padding-bottom: 0.25rem;
+    border-bottom: 2px solid var(--blue-500);
+    margin-bottom: 1rem;
+}
+
+section[data-testid="stSidebar"] input,
+section[data-testid="stSidebar"] select,
+section[data-testid="stSidebar"] textarea {
+    background-color: rgba(255,255,255,0.08) !important;
+    color: var(--white) !important;
+}
+
+/* ---------- metrics as instrument readouts ---------- */
+
+.stApp {
+    background-color: var(--white) !important;
+    color: var(--ink) !important;
+}
+
+div[data-testid="stMetric"] {
+    background: var(--white) !important;
+    border: 1px solid var(--divider);
+    border-radius: var(--radius);
+    padding: 0.85rem 1rem;
+}
+
+div[data-testid="stMetricValue"],
+div[data-testid="stMetricValue"] * {
+    font-family: 'IBM Plex Mono', monospace !important;
+    color: var(--navy-900) !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+}
+
+div[data-testid="stMetricLabel"],
+div[data-testid="stMetricLabel"] *,
+div[data-testid="stMetric"] label {
+    font-family: 'Inter', sans-serif !important;
+    color: var(--steel) !important;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem !important;
+    font-weight: 600 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* ---------- ensure any text placed inside a card is always legible,
+   regardless of the browser/OS light-dark theme ---------- */
+
+.wb-card,
+.wb-card p,
+.wb-card div,
+.wb-card strong,
+.wb-card span {
+    color: var(--ink) !important;
+}
+
+/* ---------- buttons ---------- */
+
+.stButton > button {
+    background-color: var(--blue-700);
+    color: var(--white);
+    border: none;
+    border-radius: var(--radius);
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    padding: 0.55rem 1.4rem;
+    transition: background-color 0.15s ease;
+}
+
+.stButton > button:hover {
+    background-color: var(--blue-500);
+    color: var(--white);
+}
+
+.stButton > button[kind="primary"] {
+    background-color: var(--blue-700);
+}
+
+/* ---------- tabs ---------- */
+
+button[data-baseweb="tab"] {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 600;
+    color: var(--steel);
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--blue-700);
+}
+
+div[data-baseweb="tab-highlight"] {
+    background-color: var(--blue-700) !important;
+}
+
+/* ---------- status badges (pass / fail, e.g. CG-in-envelope) ---------- */
+
+.wb-badge {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 999px;
+}
+
+.wb-badge-ok {
+    background: var(--success-bg);
+    color: var(--success);
+}
+
+.wb-badge-danger {
+    background: var(--danger-bg);
+    color: var(--danger);
+}
+
+/* ---------- empty state ---------- */
+
+.wb-empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+    color: var(--steel);
+    font-family: 'Inter', sans-serif;
+}
+
+.wb-empty-state .wb-empty-icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.75rem;
+}
